@@ -25,14 +25,44 @@ class ViewController: UIViewController {
 
 
     @IBAction func add(sender: AnyObject) {
-        //将输入的 字符串 转换为 整型
-         var number1 = (textField1.text! as NSString).intValue
-         var number2 = (textField2.text! as NSString).intValue
+        //将输入的 字符串 转换为 Double
+         var value1 = (textField1.text! as NSString).doubleValue
+         var value2 = (textField2.text! as NSString).doubleValue
         
-        // 将整型 进行运算
-        var sum = number1 + number2
-        // 将 整型 转换为 字符串 并将给文本框显示
-        resultLable.text = String(sum)
+        // 将 Double 进行运算
+        var result = value1 + value2
+        // 将Double 转换为 字符串 并将给文本框显示
+        resultLable.text = String(format: "%f",result)
+    }
+    @IBAction func subtract(sender: AnyObject) {
+        //将输入的 字符串 转换为 Double
+        var value1 = (textField1.text! as NSString).doubleValue
+        var value2 = (textField2.text! as NSString).doubleValue
+        
+        // 将 Double 进行运算
+        var result = value1 - value2
+        // 将Double 转换为 字符串 并将给文本框显示
+        resultLable.text = String(format: "%f",result)
+    }
+    @IBAction func multiply(sender: AnyObject) {
+        //将输入的 字符串 转换为 Double
+        var value1 = (textField1.text! as NSString).doubleValue
+        var value2 = (textField2.text! as NSString).doubleValue
+        
+        // 将 Double 进行运算
+        var result = value1 * value2
+        // 将Double 转换为 字符串 并将给文本框显示
+        resultLable.text = String(format: "%f",result)
+    }
+    @IBAction func divide(sender: AnyObject) {
+        //将输入的 字符串 转换为 Double
+        var value1 = (textField1.text! as NSString).doubleValue
+        var value2 = (textField2.text! as NSString).doubleValue
+        
+        // 将 Double 进行运算
+        var result = value1 / value2
+        // 将Double 转换为 字符串 并将给文本框显示
+        resultLable.text = String(format: "%f",result)
     }
 }
 
