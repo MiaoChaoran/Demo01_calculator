@@ -60,9 +60,19 @@ class ViewController: UIViewController {
         var value2 = (textField2.text! as NSString).doubleValue
         
         // 将 Double 进行运算
-        var result = value1 / value2
-        // 将Double 转换为 字符串 并将给文本框显示
-        resultLable.text = String(format: "%f",result)
+        if value2 != 0 {
+            var result = value1 / value2
+            // 将Double 转换为 字符串 并将给文本框显示
+            resultLable.text = String(format: "%f",result)
+        } else {
+            resultLable.text = "除数不能等于0"
+        }
+    }
+    @IBAction func closeKeyboard1(sender: AnyObject) {
+        textField1.resignFirstResponder()
+    }
+    @IBAction func closeKeyboard2(sender: AnyObject) {
+        textField2.resignFirstResponder()
     }
 }
 
